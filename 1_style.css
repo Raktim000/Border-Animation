@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0e1538;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  position: relative;
+  width: 20rem;
+  height: 30rem;
+  /*background-color: #fff;*/
+  border-radius: 20px;
+  background: #000000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+}
+
+.card h2 {
+  font-family: poppins;
+  font-size: 4rem;
+  text-shadow: 5px 5px red;
+  z-index: 2;
+}
+
+.card::before {
+  content: "";
+  height: 140%;
+  width: 170px;
+  background: linear-gradient(#28d4ff, #c023dc);
+  /*	background-color: red;*/
+  position: absolute;
+  /* z-index: 3; */
+  animation-name: rotate;
+  animation: rotate 5s linear infinite;
+  /* mix-blend-mode: difference; */
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  /* overflow: hidden; */
+  border-radius: 15px;
+  inset: 4px;
+  background: #0e1538;
+  /* z-index: 1; */
+}
+
+.card:hover {
+  /* background-color: #212121; */
+  transform: scale(1.1);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
